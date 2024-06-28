@@ -1,4 +1,5 @@
 #include "elib.h"
+#include "main.h"
 
 UART_HandleTypeDef elib_uart;
 
@@ -11,6 +12,8 @@ void SerialPrint(char *mesaj){
     HAL_UART_Transmit(&elib_uart, (uint8_t*)mesaj, strlen(mesaj), 100);
 }
 
+/// @brief UART 1'den seriale veri yazan fonksiyon
+/// @param Mesaj
 void SerialPrintln(char *mesaj){
     SerialPrint(mesaj);
     SerialPrint("\n\r");
@@ -18,3 +21,4 @@ void SerialPrintln(char *mesaj){
 void Delay(int sure){
 	HAL_Delay(sure);
 }
+
